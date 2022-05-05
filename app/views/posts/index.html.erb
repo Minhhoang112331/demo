@@ -1,0 +1,28 @@
+<p>List danh sach</p>
+<table style="width:100%">
+  <tr>
+    <th>id</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>image</th>
+    <th>Action</th>
+  </tr>
+  <% @posts.map do |post| %>
+	  <tr>
+	    <td><%= post.id %></td>
+	    <td><%= post.title %></td>
+	    <td><%= post.content %></td>
+	    <td><%= post.image %></td>
+	    <td> <%= link_to "view", post_path(post) %> 
+	    <%= link_to "edit", edit_post_path(post) %>  
+	    <%= link_to "Delete", post_path(post), method: :delete %></td>
+	  </tr>
+ 	<% end %>
+ 	<%= link_to "<button>New</button>".html_safe, new_post_path %>
+</table>
+
+<style>
+th, td {
+  border:1px solid black;
+}
+</style>

@@ -1,0 +1,8 @@
+<h2>Create Post</h2>
+
+<%= form_for @post , url: posts_path(@post) do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Content : <%= f.text_area :content %><br />
+  Image : <%= f.text_field :image %><br />
+  <%= f.submit %>
+<% end %>

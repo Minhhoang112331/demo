@@ -1,0 +1,8 @@
+<h2>Edit Post</h2>
+
+<%= form_for @post , url: post_path(@post), method: :patch do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Content : <%= f.text_area :content %><br />
+  Image : <%= f.text_field :image %><br />
+  <%= f.submit "update" %>
+<% end %>
